@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from .forms import UserRegisterForm
+from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 from django.contrib.auth.decorators import login_required
 
 def register(request):
@@ -17,7 +17,25 @@ def register(request):
 
 @login_required
 def profile(request):
-    return render(request, "users/profile.html")
+    if request.method == "POST":
+        u_form = UserUpdateForm(request.POST, instance=request.user)
+        p_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)
+        if u_form.is_valid() and p_form.is_valid():
+            u_form.save()
+            p_form.save()
+            messages.success(request, f"Your account has been updated.")
+            return redirect("profile")
+            # post/redirect/get pattern - not redirecting (above) means attempts to refresh the server response can cause contents of original POST to be resubmitted
+    else:
+        u_form = UserUpdateForm(instance=request.user)
+        p_form = ProfileUpdateForm(instance=request.user.profile)
+
+    context = {
+        "u_form": u_form,
+        "p_form": p_form
+    }
+
+    return render(request, "users/profile.html", context)
 
 """
 get request: what you send when you navigate to the page normally
