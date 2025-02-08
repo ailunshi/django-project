@@ -1,0 +1,52 @@
+[
+    {
+        "title": "What I did during my gap year",
+        "content": "I drafted out my gap plans in May before I even committed to the idea of gapping. At the time, I knew that gap was something I wanted to do, but it was something I was terrified of at the same time. What would I occupy my time for over a year?",
+        "user_id": 1
+    },
+    {
+        "title": "How to code",
+        "content": "Coding is difficult, but you just need to try harder",
+        "user_id": 2
+    },
+    {
+        "title": "How to cook",
+        "content": "Cooking is easy, just follow the recipe",
+        "user_id": 3
+    },
+    {  
+        "title": "How to write a novel",
+        "content": "Try harder!",
+        "user_id": 1
+    },
+    {
+        "title": "A writing update on my novel",
+        "content": "The bells have been rung and the ball has been dropped, and me personally, I closed out 2024 by finishing Draft 5 of my novel — finished on the penultimate day of the year in Harbin, China while it was sub-zero outside (how quaint).",
+        "user_id": 1
+    },
+    {
+        "title": "I finally got a job!",
+        "content": "I'm working as a software engineer.",
+        "user_id": 2
+    },
+    {
+        "title": "My favorite dishes ranked",
+        "content": "In first place, rice cakes.",
+        "user_id": 3
+    },
+    {  
+        "title": "My favorite dishes ranked",
+        "content": "In first place, rice cakes.",
+        "user_id": 1
+    },
+    {
+        "title": "How to not burn your food",
+        "content": "Gentle flames.",
+        "user_id": 3
+    },
+    {
+        "title": "Please find me a job",
+        "content": "Difficulties abound.",
+        "user_id": 2
+    }
+]
