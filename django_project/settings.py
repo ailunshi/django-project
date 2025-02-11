@@ -21,12 +21,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-y68694ll_n@0u94ro48y&hhpc+e01rj_m(qpe3+g-b3rl0@v3+"
+SECRET_KEY = os.environ.get("SECRET_KEY")
+# SECRET_KEY = "django-insecure-y68694ll_n@0u94ro48y&hhpc+e01rj_m(qpe3+g-b3rl0@v3+"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["ailunblog-4d29c5956093.herokuapp.com"]
 
 
 # Application definition
@@ -147,13 +148,9 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.environ.get("DB_USER") # to be filled in
 EMAIL_HOST_PASSWORD = os.environ.get("DB_PASS") # to be filled in
 
-#AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
-#AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
-#AWS_STORAGE_BUCKET_NAME = os.environ.get("AWS_STORAGE_BUCKET_NAME")
-
-AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID_2")
-AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY_2")
-AWS_STORAGE_BUCKET_NAME = os.environ.get("AWS_STORAGE_BUCKET_NAME_2")
+AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
+AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
+AWS_STORAGE_BUCKET_NAME = os.environ.get("AWS_STORAGE_BUCKET_NAME")
 
 AWS_S3_REGION_NAME = "us-east-2"
 
