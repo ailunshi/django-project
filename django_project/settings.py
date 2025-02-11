@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 from pathlib import Path
 import os
 import psycopg2
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -82,16 +83,16 @@ WSGI_APPLICATION = "django_project.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "d9os2qqeksk3se",
-        "USER": "u82hjvqa0810or",
-        "PASSWORD": "p616014763dfe0972a7229edf92020ef24381167018d6eff9340913cf60f044d9",
-        "HOST": "127.0.0.1",
-        "PORT": "5432",
-    }
-}
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql",
+#         "NAME": "d9os2qqeksk3se",
+#         "USER": "u82hjvqa0810or",
+#         "PASSWORD": "p616014763dfe0972a7229edf92020ef24381167018d6eff9340913cf60f044d9",
+#         "HOST": "127.0.0.1",
+#         "PORT": "5432",
+#     }
+# }
 
 DATABASE_URL = os.environ["DATABASE_URL"]
 # os.environ['DATABASE_URL']
@@ -174,4 +175,4 @@ STORAGES = {
     },
 }
 
-DATABASES['default'] = DATABASE_URL.config(conn_max_age=600, ssl_require=True)
+DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
