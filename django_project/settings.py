@@ -87,8 +87,8 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": "d9os2qqeksk3se",
-        "USER": "u82hjvqa0810or",
-        "PASSWORD": "p616014763dfe0972a7229edf92020ef24381167018d6eff9340913cf60f044d9",
+        "USER": os.environ["DB_USER"],
+        "PASSWORD": os.environ["DB_PASS"],
         "HOST": "127.0.0.1",
         "PORT": "5432",
     }
@@ -156,8 +156,8 @@ EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = os.environ.get("DB_USER") # to be filled in
-EMAIL_HOST_PASSWORD = os.environ.get("DB_PASS") # to be filled in
+EMAIL_HOST_USER = os.environ.get("EMAIL_USER") # to be filled in
+EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_PASS") # to be filled in
 
 AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
 AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
