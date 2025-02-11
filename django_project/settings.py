@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import os
+import psycopg2
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -83,11 +84,21 @@ WSGI_APPLICATION = "django_project.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "d9os2qqeksk3se",
+        "USER": "u82hjvqa0810or",
+        "PASSWORD": "p616014763dfe0972a7229edf92020ef24381167018d6eff9340913cf60f044d9",
+        "HOST": "127.0.0.1",
+        "PORT": "5432",
     }
 }
 
+DATABASE_URL = "postgres://u82hjvqa0810or:p616014763dfe0972a7229edf92020ef24381167018d6eff9340913cf60f044d9@cbec45869p4jbu.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com:5432/d9os2qqeksk3se"
+# os.environ['DATABASE_URL']
+
+conn = psycopg2.connect(DATABASE_URL, sslmode='require')
+
+DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
