@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECRET_KEY = "django-insecure-y68694ll_n@0u94ro48y&hhpc+e01rj_m(qpe3+g-b3rl0@v3+"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = (os.environ.get("DEBUG_VALUE") == "True")
 
 ALLOWED_HOSTS = ["ailunblog-4d29c5956093.herokuapp.com"]
 
