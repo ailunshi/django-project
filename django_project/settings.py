@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = (os.environ.get("DEBUG_VALUE") == "True")
 
-ALLOWED_HOSTS = ["ailunblog-4d29c5956093.herokuapp.com"]
+ALLOWED_HOSTS = ["127.0.0.1", "ailunblog-4d29c5956093.herokuapp.com"]
 
 
 # Application definition
@@ -85,17 +85,18 @@ WSGI_APPLICATION = "django_project.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "d9os2qqeksk3se",
-        "USER": os.environ["DB_USER"],
-        "PASSWORD": os.environ["DB_PASS"],
-        "HOST": "127.0.0.1",
-        "PORT": "5432",
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
+        # "ENGINE": "django.db.backends.postgresql",
+        # "NAME": "d9os2qqeksk3se",
+        # "USER": os.environ["DB_USER"],
+        # "PASSWORD": os.environ["DB_PASS"],
+        # "HOST": "127.0.0.1",
+        # "PORT": "5432",
     }
 }
 
 DATABASE_URL = os.environ["DATABASE_URL"]
-# os.environ['DATABASE_URL']
 
 conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 
