@@ -5,11 +5,15 @@ body {
   }
   
   h1, h2, h3, h4, h5, h6 {
-    color: #000000;
+    color: hsl(0, 0%, 0%);
   }
   
   ul {
     margin: 0;
+  }
+
+  .blog-title {
+    color: #ffffff;
   }
   
   .bg-purple {
@@ -22,6 +26,11 @@ body {
     top: 0;
     background-color: #ffffff;
     line-height: 1.5;
+  }
+
+  .navbar {
+    position: fixed;
+    top: 0px;
   }
 
   .site-header .navbar-nav .nav-link {
